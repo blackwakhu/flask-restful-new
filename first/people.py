@@ -1,4 +1,5 @@
 from datetime import datetime 
+from flask import abort
 
 
 def get_timestamp():
@@ -25,3 +26,18 @@ PEOPLE = {
 
 def read_all():
   return list(PEOPLE.values())
+
+def create_people(person):
+  lname = person.get("lname")
+  fname = person.get("fname", "")
+  if lname and lname not in PEOPLE:
+    PEOPLE[lname] = {
+      "lname": lname,
+      "fname": fname,
+      "timestamp": get_timestamp(),
+    }
+    return PEOPLE[lname], 201
+  else:
+    abort( 406, f"the person called {lname} already exists",)
+
+
