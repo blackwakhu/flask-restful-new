@@ -4,3 +4,18 @@ info:
   title: "my first yml flask application"
   description: "first appliction that  i utilised flask and yml"
   version: "1.0.0"
+
+servers: 
+  - url: "/api"
+
+paths:
+  /people: 
+    get:
+      operationId: "people.read_all"
+      tags:
+        - "People"
+      summary: "read the list of all people"
+      responses:
+       "200":
+         description: "success"
+
