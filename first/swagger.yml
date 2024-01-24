@@ -47,3 +47,44 @@ paths:
       responses:
         "201":
           description: "successfully created a person"
+  /people/{name}:
+    get:
+      operationId: "people.read_one"
+      tags:
+        - "People"
+      summary: "read one person"
+      parameters: 
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "201":
+          description: "successfully read one person"
+    put:
+      operationId: "people.update"
+      tags: 
+        - "People"
+      summary: "update one person"
+      parameters: 
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "201":
+          description: "successfully updated one person"
+      requestBody:
+        content:
+          type: 
+            application/json:
+              schema: 
+                x-body-name: "person"
+                $ref: "#/components/schemas/Person"
+              
+    delete:
+      operationId: "people.delete"
+      tags: 
+        - "People"
+      summary: "delete one person"      
+      parameters: 
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "201":
+          description: "successfully deleted one person"
+      
+      
