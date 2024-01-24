@@ -32,7 +32,7 @@ paths:
          description: "success"
          
     post:
-      operationId: "people.create"
+      operationId: "people.create_people"
       tags:
         - "People"
       summary: "create people"
