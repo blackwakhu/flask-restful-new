@@ -1,0 +1,6 @@
+openapi: 3.0.0
+
+info:
+  title: "my first yml flask application"
+  description: "first appliction that  i utilised flask and yml"
+  version: "1.0.0"
